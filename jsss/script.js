@@ -53,9 +53,43 @@
 // const body = document.querySelector("body");
 // const div = document.createElement("div");
 // const p = document.createElement("p");
+// p.style = "color: red"; // adding attribute direcltly
 
+// body.append(p);
 // body.append("hello motherfucker");
 // p.innerHTML = "hello boss how are you";
 
 // div.append(p);
 // body.append(div);
+
+/**
+ * todo : replace child is working principle is you have 2 child node or html tag , replace by one with the
+ * todo : helps of replacechild method
+ */
+
+// const body = document.querySelector("body");
+// const div = document.createElement("div");
+// const p1 = document.createElement("p");
+// const p2 = document.createElement("p");
+// p1.innerText = "First p1 tag";
+// p2.innerText = "Second p2 tag";
+// div.append(p1, p2);
+// div.replaceChild(p2, p1);
+
+// body.appendChild(div);
+
+/**
+ * @dom_property important
+ */
+
+// console.log(document.baseURI);
+// console.log(document.body);
+// console.log(document.cookie);
+// console.log(document.doctype);
+// console.log(document.documentElement); // returen the html elements
+// console.log(document.documentMode);
+// console.log(document.documentURI);
+// console.log(document.embeds);
+// console.log(document.implementation);
+// console.log(document.lastModified);
+// console.log(document.readyState);
