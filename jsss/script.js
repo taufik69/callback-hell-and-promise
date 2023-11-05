@@ -112,19 +112,19 @@
  *
  */
 
-const para = document.createElement("p");
-const node = document.createTextNode("This is new.");
-para.appendChild(node);
+// const para = document.createElement("p");
+// const node = document.createTextNode("This is new.");
+// para.appendChild(node);
 
-const element = document.getElementById("div1");
-const child = document.getElementById("p2");
-element.insertBefore(para, child);
+// const element = document.getElementById("div1");
+// const child = document.getElementById("p2");
+// element.insertBefore(para, child);
 
 /**
  * todo : remove method remove this node or tag to the dom
  */
 
-child.remove();
+// child.remove();
 
 /**
  * @Bom Browser object model
@@ -134,5 +134,14 @@ child.remove();
 // console.log(window.screen.colorDepth);
 // console.log(window.location);
 
-let x = 3;
-console.log(typeof x.toString());
+// let x = 3;
+// console.log(typeof x.toString());
+
+const p2 = document.querySelector("#p2");
+const arr = ["hello ", "ba"];
+const obj = {
+  name: "taufik",
+  age: 2,
+};
+
+p2.innerHTML = JSON.stringify(arr);
