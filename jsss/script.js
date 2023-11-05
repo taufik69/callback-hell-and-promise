@@ -126,4 +126,13 @@ element.insertBefore(para, child);
 
 child.remove();
 
+/**
+ * @Bom Browser object model
+ */
 
+// console.log(window.screen.height);
+// console.log(window.screen.colorDepth);
+// console.log(window.location);
+
+let x = 3;
+console.log(typeof x.toString());
