@@ -93,3 +93,37 @@
 // console.log(document.implementation);
 // console.log(document.lastModified);
 // console.log(document.readyState);
+
+/**
+ * todo : dom navigation
+ * @properties  : parentNode , childNodes, firstChild , lastChild , nextSibling , previousSibling
+ */
+
+// const title = document.querySelector("title");
+// console.log(title.nodeValue);
+
+// console.log(document.getElementById("id01").firstChild); // show html output withquation  like --> "hello taufik"
+// console.log(document.getElementById("id02").firstChild.nodeValue); // show html output without quation  like --> hello taufik
+// console.log(document.getElementById("id02").nodeName); // show the html tag name NB: tag and node are tottaly difference not same
+// console.log(document.getElementById("id02").nodeType);
+
+/**
+ * @insertBefore node
+ *
+ */
+
+const para = document.createElement("p");
+const node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+const element = document.getElementById("div1");
+const child = document.getElementById("p2");
+element.insertBefore(para, child);
+
+/**
+ * todo : remove method remove this node or tag to the dom
+ */
+
+child.remove();
+
+
