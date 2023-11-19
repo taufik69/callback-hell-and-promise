@@ -137,11 +137,19 @@
 // let x = 3;
 // console.log(typeof x.toString());
 
-const p2 = document.querySelector("#p2");
-const arr = ["hello ", "ba"];
-const obj = {
-  name: "taufik",
-  age: 2,
-};
+/**
+ * @convention when variable call then js automatically convertd toString() method .
+ * todo : if you want to check use innerHtml
+ * @prevent : first of all stringyfy the object or arra
+ */
+// const p2 = document.querySelector("#p2");
+// const arr = ["hello ", "ba"];
+// const obj = {
+//   name: "taufik",
+//   age: 2,
+// };
 
-p2.innerHTML = JSON.stringify(arr);
+// p2.innerHTML = JSON.stringify(arr);
+
+
+
