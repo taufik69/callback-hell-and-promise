@@ -83,43 +83,68 @@
 
 // now make a another promise
 
-const cart = ["shoes ", "pants", "shirt"];
-createOrder(cart)
-  .then((getresult) => {
-    return getresult;
-  })
-  .then((getresultfrom1) => {
-    return procedPayment(getresultfrom1);
-  })
-  .then((paymentInfo) => {
-    console.log("from chain", paymentInfo);
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-  .finally(() => {
-    console.log("sob finished");
-  });
+// const cart = ["shoes ", "pants", "shirt"];
+// createOrder(cart)
+//   .then((getresult) => {
+//     return getresult;
+//   })
+//   .then((getresultfrom1) => {
+//     return procedPayment(getresultfrom1);
+//   })
+//   .then((paymentInfo) => {
+//     console.log("from chain", paymentInfo);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+//   .finally(() => {
+//     console.log("sob finished");
+//   });
 
-// make a promise object // or create a promise
-function createOrder(cart) {
+// // make a promise object // or create a promise
+// function createOrder(cart) {
+//   return new Promise((reslove, reject) => {
+//     let status = false;
+//     if (status) {
+//       reslove(cart);
+//     } else {
+//       const err = new Error("Cart is not valid");
+//       reject(err);
+//     }
+//   });
+// }
+
+// // make another promise funciton
+
+// function procedPayment(getinfofrom1stfunction) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("payment done " + getinfofrom1stfunction);
+//     }, 2000);
+//   });
+// }
+
+function apiFetcher(api) {
   return new Promise((reslove, reject) => {
-    let status = false;
-    if (status) {
-      reslove(cart);
-    } else {
-      const err = new Error("Cart is not valid");
-      reject(err);
-    }
+    fetch(api).then((res) => reslove(res.json()));
   });
 }
 
-// make another promise funciton
-
-function procedPayment(getinfofrom1stfunction) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("payment done " + getinfofrom1stfunction);
-    }, 2000);
+function parsing(data) {
+  return new Promise((reslove, reject) => {
+    const json = data.products;
+    reslove(json);
   });
 }
+
+const api = "https://dummyjson.com/products";
+apiFetcher(api)
+  .then((json) => {
+    return parsing(json);
+  })
+  .then((allproduct) => {
+    return allproduct;
+  })
+  .then((slice) => {
+    console.log(slice[0]);
+  });
